@@ -37,7 +37,6 @@
                radial-gradient(640px 420px at 2% 108%,rgba(76,125,255,.07),transparent 70%)}
   .wrap{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 28px}
 
-  /* nav */
   nav{position:sticky;top:0;z-index:50;background:rgba(15,17,21,.94);border-bottom:1px solid var(--line)}
   .navIn{display:flex;align-items:center;justify-content:space-between;height:66px}
   .logo{font-family:Syne,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.01em}
@@ -53,7 +52,6 @@
   .btnSm:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,241,246,.14)}
   @media(max-width:700px){.navLinks a:not(.btnSm){display:none}}
 
-  /* hero */
   .hero{padding:96px 0 80px;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
   .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.24em;color:var(--amber);margin-bottom:22px}
   h1{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(42px,6.4vw,82px);line-height:1.02;letter-spacing:-.025em}
@@ -68,7 +66,6 @@
   .btn.ghost{border-color:var(--line2);color:var(--ink)}
   .btn.ghost:hover{border-color:var(--amber);box-shadow:0 10px 30px rgba(245,165,36,.1)}
 
-  /* facts panel */
   .facts{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;
     box-shadow:0 30px 60px rgba(0,0,0,.4)}
   .facts h2{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.28em;
@@ -83,14 +80,12 @@
   @keyframes pulse{50%{opacity:.35}}
   @media(max-width:920px){.hero{grid-template-columns:1fr;padding-top:64px}}
 
-  /* sections */
   section{padding:96px 0}
   .secHead{margin-bottom:44px;max-width:640px}
   .secHead .no{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.28em;color:var(--amber)}
   .secHead h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-.02em;margin:12px 0 14px}
   .secHead p{color:var(--dim);font-size:16.5px}
 
-  /* ========== REVIEWS PANEL ========== */
   .reviews{padding:40px 0 20px}
   .revWrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;
     padding:36px 40px 28px;position:relative;overflow:hidden;
@@ -117,7 +112,6 @@
   .rev .at .src{color:var(--mut);padding-left:10px;border-left:2px solid var(--line);margin-left:10px}
   @media(max-width:700px){.revWrap{padding:26px 22px 22px}.revDeck{min-height:170px}}
 
-  /* game rows */
   .gList{border-top:1px solid var(--line)}
   .gRow{--acc:var(--amber);display:grid;grid-template-columns:84px 1fr auto auto 46px;gap:26px;align-items:center;
     padding:34px 10px;border-bottom:1px solid var(--line);position:relative;
@@ -125,18 +119,17 @@
   .gRow:hover{background:rgba(255,255,255,.022);padding-left:22px}
   .gRow .num{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mut);transition:color .25s}
   .gRow:hover .num{color:var(--acc)}
-  .gRow h3{font-family:Syne,sans-serif;font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;
-    transition:color .2s}
+  .gRow h3{font-family:Syne,sans-serif;font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;transition:color .2s}
   .gRow p{color:var(--dim);font-size:14.5px;margin-top:6px;max-width:560px}
   .gTag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.22em;color:var(--acc);
     border:1px solid var(--acc);border-radius:99px;padding:6px 14px;white-space:nowrap;opacity:.85}
-  
-  /* Repo Link Styling */
+
+  /* ★ FIXED: explicit size + flex-shrink prevents stretching */
   .gRepo{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.05em;
     color:var(--dim);padding:6px 12px;border:1px solid var(--line);border-radius:6px;
     transition:all .2s ease;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
   .gRepo:hover{color:var(--ink);border-color:var(--ink);background:rgba(255,255,255,.05)}
-  .gRepo svg{width:14px;height:14px;fill:currentColor}
+  .gRepo svg{width:14px;height:14px;flex-shrink:0;fill:currentColor}
 
   .gArr{font-size:24px;color:var(--mut);transition:transform .25s,color .25s;text-align:right}
   .gRow:hover .gArr{transform:translateX(8px);color:var(--acc)}
@@ -151,7 +144,6 @@
     .gArr{display:none}
   }
 
-  /* stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;
     overflow:hidden;background:var(--panel)}
   @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
@@ -161,7 +153,6 @@
   .stat b{display:block;font-family:Syne,sans-serif;font-weight:800;font-size:clamp(34px,4vw,52px);line-height:1;letter-spacing:-.02em;color:var(--amber)}
   .stat span{display:block;margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--mut)}
 
-  /* ========== TERMINAL ========== */
   .term{padding:20px 0 80px}
   .termIn{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
   @media(max-width:900px){.termIn{grid-template-columns:1fr}}
@@ -204,7 +195,6 @@
   @keyframes blink{50%{opacity:0}}
   .terminal-body .promptPath{color:var(--blue)}
 
-  /* team */
   .tGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:920px){.tGrid{grid-template-columns:1fr}}
   .tCard{--acc:var(--amber);background:var(--panel);border:1px solid var(--line);border-radius:14px;
@@ -225,7 +215,6 @@
   .tLink{font-weight:600;font-size:13.5px;color:var(--dim);transition:color .2s}
   .tLink:hover{color:var(--ink)}
 
-  /* cta band */
   .band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .bandIn{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:56px 0;flex-wrap:wrap}
   .band h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.02em;max-width:580px}
@@ -237,7 +226,6 @@
   .footIn .mono{font-size:11.5px;letter-spacing:.16em}
   .footIn a:hover{color:var(--ink)}
 
-  /* reveals */
   .reveal{transition:opacity .65s ease,transform .65s ease}
   .reveal.will{opacity:0;transform:translateY(22px)}
   .reveal.in{opacity:1;transform:none}
@@ -279,7 +267,6 @@
   </div>
 </header>
 
-<!-- ========== ROLLING REVIEWS ========== -->
 <section class="reviews reveal" style="padding-top:20px">
   <div class="wrap">
     <div class="revWrap">
@@ -309,7 +296,6 @@
   </div>
 </section>
 
-<!-- GAMES SECTION WITH HARDCODED REPO LINKS -->
 <section id="games">
   <div class="wrap">
     <div class="secHead reveal">
@@ -318,59 +304,32 @@
       <p>Every release is tuned until it feels good in the hand. Pick one — it'll take thirty seconds to learn.</p>
     </div>
     <div class="gList">
-      <!-- HUB -->
       <a class="gRow reveal" href="./hub/" style="--acc:var(--amber)">
         <span class="num">000</span>
         <div><h3>The Arcade</h3><p>Every 3bitFun release under one roof — browse the whole catalog.</p></div>
         <span class="gTag">HUB</span>
-        <span class="gRepo">
-          <a href="https://github.com/3bitfun/fun" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View on GitHub ↗
-          </a>
-        </span>
+        <span class="gRepo"><a href="https://github.com/3bitfun/fun" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub ↗</a></span>
         <span class="gArr">→</span>
       </a>
-      
-      <!-- STACKS -->
       <a class="gRow reveal" href="https://deano-139.github.io/stacks/" style="--acc:var(--red)">
         <span class="num">001</span>
         <div><h3>Stacks</h3><p>Infinite loop of dropping blocks, stacking them, and dropping them again.</p></div>
         <span class="gTag">TIMING</span>
-        <span class="gRepo">
-          <a href="https://github.com/deano-139" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View on GitHub ↗
-          </a>
-        </span>
+        <span class="gRepo"><a href="https://github.com/deano-139" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub ↗</a></span>
         <span class="gArr">→</span>
       </a>
-      
-      <!-- DOODL -->
       <a class="gRow reveal" href="https://3bitfun.github.io/doodl/" style="--acc:var(--blue)">
         <span class="num">002</span>
         <div><h3>doodl</h3><p>A fun online multiplayer game of doodling and guessing what you're drawing.</p></div>
         <span class="gTag">PUZZLE</span>
-        <span class="gRepo">
-          <a href="https://github.com/3bitfun/doodl" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View on GitHub ↗
-          </a>
-        </span>
+        <span class="gRepo"><a href="https://github.com/3bitfun/doodl" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub ↗</a></span>
         <span class="gArr">→</span>
       </a>
-      
-      <!-- ROBOKOMBAT -->
       <a class="gRow reveal" href="https://tasqlab.itch.io/robokombat/" style="--acc:var(--green)">
         <span class="num">003</span>
         <div><h3>Robokombat</h3><p>Two player robot combat. You control the robot, the enemy controls the robot.</p></div>
         <span class="gTag">SKILL</span>
-        <span class="gRepo">
-          <a href="https://github.com/tasqlab/robokombat" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View on GitHub ↗
-          </a>
-        </span>
+        <span class="gRepo"><a href="https://github.com/tasqlab/robokombat" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub ↗</a></span>
         <span class="gArr">→</span>
       </a>
     </div>
@@ -388,7 +347,6 @@
   </div>
 </section>
 
-<!-- ========== TERMINAL ========== -->
 <section class="term reveal" style="padding-top:40px">
   <div class="wrap termIn">
     <div class="termCopy">
@@ -401,7 +359,6 @@
         <li>Zero waiting — everything ships on GitHub Pages, globally cached.</li>
       </ul>
     </div>
-
     <div class="terminal-preview">
       <div class="terminal-bar">
         <div class="terminal-dot r"></div>
@@ -476,48 +433,28 @@
 <script>
 "use strict";
 const $=s=>document.querySelector(s);
-
-/* ---------- reviews carousel ---------- */
 const revs=[...document.querySelectorAll('#revDeck .rev')];
 const dotsWrap=$('#revDots');
-let revIdx=0, revTimer=null;
-revs.forEach((_,i)=>{
-  const b=document.createElement('button');b.className='revDot';b.setAttribute('aria-label','Review '+(i+1));
+let revIdx=0,revTimer=null;
+revs.forEach((_,i)=>{const b=document.createElement('button');b.className='revDot';b.setAttribute('aria-label','Review '+(i+1));
   b.onclick=()=>{go(i);reset();};dotsWrap.appendChild(b);});
-function go(i){
-  revIdx=(i+revs.length)%revs.length;
+function go(i){revIdx=(i+revs.length)%revs.length;
   revs.forEach((r,k)=>r.classList.toggle('on',k===revIdx));
   dotsWrap.querySelectorAll('.revDot').forEach((d,k)=>d.classList.toggle('on',k===revIdx));}
 function reset(){clearInterval(revTimer);revTimer=setInterval(()=>go(revIdx+1),5200);}
 go(0);reset();
 const rw=document.querySelector('.revWrap');
-if(rw){rw.addEventListener('mouseenter',()=>clearInterval(revTimer));
-  rw.addEventListener('mouseleave',reset);}
-
-/* ---------- failsafe reveals ---------- */
+if(rw){rw.addEventListener('mouseenter',()=>clearInterval(revTimer));rw.addEventListener('mouseleave',reset);}
 function forceRevealAll(){document.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('will');el.classList.add('in');});}
-try{
-  if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(es=>es.forEach(e=>{
-      if(e.isIntersecting){e.target.classList.remove('will');e.target.classList.add('in');io.unobserve(e.target);}
-    }),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach((el,i)=>{
-      el.style.transitionDelay=(i%4)*70+'ms';el.classList.add('will');io.observe(el);});
-  }
-}catch(e){forceRevealAll();}
+try{if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.remove('will');e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:.12});document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay=(i%4)*70+'ms';el.classList.add('will');io.observe(el);});}}catch(e){forceRevealAll();}
 window.addEventListener('error',forceRevealAll);
-
-/* ---------- replay terminal when scrolled into view ---------- */
-if('IntersectionObserver' in window){
-  const termBody=document.querySelector('.terminal-body');
-  if(termBody){
-    const io2=new IntersectionObserver(es=>es.forEach(e=>{
-      if(e.isIntersecting){
-        termBody.querySelectorAll('.line').forEach(l=>{l.style.animation='none';void l.offsetWidth;l.style.animation='';});
-        io2.unobserve(termBody);}
-    }),{threshold:.35});
-    io2.observe(termBody);}}
-
+if('IntersectionObserver' in window){const tb=document.querySelector('.terminal-body');
+  if(tb){const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+    tb.querySelectorAll('.line').forEach(l=>{l.style.animation='none';void l.offsetWidth;l.style.animation='';});
+    io2.unobserve(tb);}}),{threshold:.35});io2.observe(tb);}}
 const yr=$('#year');if(yr)yr.textContent=new Date().getFullYear();
 </script>
 </body>
