@@ -1,249 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>3bitFun — independent game studio</title>
-<meta name="description" content="3bitFun is a three-person indie game studio shipping on GitHub. Fast to learn, hard to put down.">
-<meta property="og:title" content="3bitFun">
-<meta property="og:description" content="Independent game studio. Games worth one more run.">
-<meta name="theme-color" content="#0f1115">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101216'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='900' fill='%23f5a524' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0f1115; --bg2:#13161c; --panel:#161a22; --line:#242a36; --line2:#303848;
-    --ink:#eef1f6; --dim:#9aa3b5; --mut:#5d6678;
-    --amber:#f5a524; --red:#ff5e5e; --blue:#4c7dff; --green:#3ecf7c;
-    color-scheme:dark;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:"Instrument Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);
-    line-height:1.6;overflow-x:hidden}
-  ::selection{background:var(--amber);color:#141104}
-  a{color:inherit;text-decoration:none}
-  .mono{font-family:"JetBrains Mono",monospace}
-  :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-
-  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:linear-gradient(rgba(245,165,36,.028) 1px,transparent 1px),
-               linear-gradient(90deg,rgba(245,165,36,.028) 1px,transparent 1px);
-    background-size:52px 52px}
-  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(720px 420px at 88% -6%,rgba(245,165,36,.09),transparent 70%),
-               radial-gradient(640px 420px at 2% 108%,rgba(76,125,255,.07),transparent 70%)}
-  .wrap{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 28px}
-
-  nav{position:sticky;top:0;z-index:50;background:rgba(15,17,21,.94);border-bottom:1px solid var(--line)}
-  .navIn{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .logo{font-family:Syne,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.01em}
-  .logo b{color:var(--amber)}
-  .navLinks{display:flex;align-items:center;gap:30px;font-weight:600;font-size:14.5px}
-  .navLinks a:not(.btnSm){color:var(--dim);position:relative;padding:4px 0;transition:color .2s}
-  .navLinks a:not(.btnSm)::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
-    background:var(--amber);transition:width .25s}
-  .navLinks a:not(.btnSm):hover{color:var(--ink)}
-  .navLinks a:not(.btnSm):hover::after{width:100%}
-  .btnSm{background:var(--ink);color:#101216;font-weight:700;font-size:13.5px;padding:9px 18px;
-    border-radius:8px;transition:transform .18s,box-shadow .18s}
-  .btnSm:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,241,246,.14)}
-  @media(max-width:700px){.navLinks a:not(.btnSm){display:none}}
-
-  .hero{padding:96px 0 80px;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
-  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.24em;color:var(--amber);margin-bottom:22px}
-  h1{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(42px,6.4vw,82px);line-height:1.02;letter-spacing:-.025em}
-  h1 .a{color:var(--amber)}
-  .lede{margin:26px 0 34px;max-width:520px;color:var(--dim);font-size:17.5px}
-  .ctaRow{display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:14px 26px;
-    border-radius:10px;border:1px solid transparent;transition:transform .18s,box-shadow .18s,border-color .18s}
-  .btn:hover{transform:translateY(-2px)}
-  .btn.gold{background:var(--amber);color:#141104}
-  .btn.gold:hover{box-shadow:0 10px 30px rgba(245,165,36,.28)}
-  .btn.ghost{border-color:var(--line2);color:var(--ink)}
-  .btn.ghost:hover{border-color:var(--amber);box-shadow:0 10px 30px rgba(245,165,36,.1)}
-
-  .facts{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;
-    box-shadow:0 30px 60px rgba(0,0,0,.4)}
-  .facts h2{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.28em;
-    color:var(--mut);margin-bottom:18px}
-  .facts .row{display:flex;justify-content:space-between;align-items:center;gap:16px;
-    padding:13px 0;border-bottom:1px dashed var(--line)}
-  .facts .row:last-child{border-bottom:0}
-  .facts .k{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.18em;color:var(--mut)}
-  .facts .v{font-weight:600;font-size:15px;text-align:right}
-  .liveDot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);
-    box-shadow:0 0 10px var(--green);margin-right:8px;animation:pulse 1.6s infinite}
-  @keyframes pulse{50%{opacity:.35}}
-  @media(max-width:920px){.hero{grid-template-columns:1fr;padding-top:64px}}
-
-  section{padding:96px 0}
-  .secHead{margin-bottom:44px;max-width:640px}
-  .secHead .no{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.28em;color:var(--amber)}
-  .secHead h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-.02em;margin:12px 0 14px}
-  .secHead p{color:var(--dim);font-size:16.5px}
-
-  .reviews{padding:40px 0 20px}
-  .revWrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;
-    padding:36px 40px 28px;position:relative;overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,.35)}
-  .revHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:20px;flex-wrap:wrap}
-  .revLabel{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.28em;color:var(--amber)}
-  .revStage{display:flex;align-items:center;gap:8px}
-  .revDot{width:8px;height:8px;border-radius:50%;background:var(--line2);border:0;cursor:pointer;
-    transition:background .2s,transform .2s;padding:0}
-  .revDot.on{background:var(--amber);transform:scale(1.25)}
-  .revDot:hover{background:var(--amber)}
-  .revDeck{position:relative;min-height:140px}
-  .rev{position:absolute;inset:0;opacity:0;transform:translateY(8px);
-    transition:opacity .5s ease,transform .5s ease;pointer-events:none}
-  .rev.on{opacity:1;transform:none;pointer-events:auto}
-  .rev blockquote{font-family:"Instrument Sans",serif;font-style:italic;font-weight:500;
-    font-size:clamp(20px,2.4vw,28px);line-height:1.4;color:var(--ink);max-width:720px;
-    text-indent:-.45em;padding-left:.45em}
-  .rev blockquote::before{content:"\201C";color:var(--amber);font-family:Syne,sans-serif;
-    font-weight:800;font-style:normal;font-size:1.3em;vertical-align:-.1em;margin-right:.05em}
-  .rev .at{margin-top:18px;font-family:"JetBrains Mono",monospace;font-size:12px;
-    color:var(--dim);letter-spacing:.08em}
-  .rev .at b{color:var(--ink);font-weight:600;letter-spacing:0}
-  .rev .at .src{color:var(--mut);padding-left:10px;border-left:2px solid var(--line);margin-left:10px}
-  @media(max-width:700px){.revWrap{padding:26px 22px 22px}.revDeck{min-height:170px}}
-
-  /* ===== GAMES — ROW AS DIV, NO NESTED ANCHORS ===== */
-  .gList{border-top:1px solid var(--line)}
-  .gRow{--acc:var(--amber);display:grid;grid-template-columns:84px 1fr auto 46px;gap:26px;align-items:center;
-    padding:34px 10px;border-bottom:1px solid var(--line);position:relative;
-    transition:background .25s,padding-left .25s}
-  .gRow:hover{background:rgba(255,255,255,.022);padding-left:22px}
-  .gRow .num{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mut);transition:color .25s}
-  .gRow:hover .num{color:var(--acc)}
-
-  /* Main clickable area (title + description) */
-  .gMain{display:block;transition:color .2s}
-  .gMain h3{font-family:Syne,sans-serif;font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;
-    transition:color .2s;color:var(--ink)}
-  .gRow:hover .gMain h3{color:var(--acc)}
-  .gMain p{color:var(--dim);font-size:14.5px;margin-top:6px;max-width:560px}
-
-  /* Meta cluster: tag + green button */
-  .gMeta{display:flex;gap:10px;align-items:center;flex-wrap:nowrap}
-  .gTag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.22em;color:var(--acc);
-    border:1px solid var(--acc);border-radius:99px;padding:6px 14px;white-space:nowrap;opacity:.85}
-
-  /* ★ GREEN REPO BUTTON — FILLED PILL INSIDE THE CARD */
-  .gRepoBtn{display:inline-flex;align-items:center;gap:7px;
-    font-family:"JetBrains Mono",monospace;font-size:11.5px;font-weight:700;letter-spacing:.05em;
-    color:#081811;background:var(--green);
-    border:1px solid var(--green);border-radius:8px;
-    padding:9px 15px;white-space:nowrap;
-    box-shadow:0 3px 0 rgba(30,120,70,.5),0 0 0 1px rgba(62,207,124,.15) inset;
-    transition:transform .15s,box-shadow .15s,filter .15s}
-  .gRepoBtn:hover{transform:translateY(-1px);filter:brightness(1.08);
-    box-shadow:0 5px 0 rgba(30,120,70,.5),0 0 18px rgba(62,207,124,.35),0 0 0 1px rgba(62,207,124,.3) inset}
-  .gRepoBtn:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(30,120,70,.5)}
-  .gRepoBtn svg{width:14px;height:14px;flex-shrink:0;fill:#081811}
-
-  .gArr{font-size:24px;color:var(--mut);transition:transform .25s,color .25s;text-align:right}
-  .gRow:hover .gArr{transform:translateX(8px);color:var(--acc)}
-  .gRow::after{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:3px;background:var(--acc);
-    opacity:0;transition:opacity .25s}
-  .gRow:hover::after{opacity:1}
-  @media(max-width:820px){
-    .gRow{grid-template-columns:1fr;gap:14px;padding:26px 6px}
-    .gRow:hover{padding-left:14px}
-    .gMeta{flex-wrap:wrap}
-    .gArr{display:none}
-  }
-
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;
-    overflow:hidden;background:var(--panel)}
-  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stat{padding:32px 28px;border-right:1px solid var(--line)}
-  .stat:last-child{border-right:0}
-  @media(max-width:820px){.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-  .stat b{display:block;font-family:Syne,sans-serif;font-weight:800;font-size:clamp(34px,4vw,52px);line-height:1;letter-spacing:-.02em;color:var(--amber)}
-  .stat span{display:block;margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--mut)}
-
-  .term{padding:20px 0 80px}
-  .termIn{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
-  @media(max-width:900px){.termIn{grid-template-columns:1fr}}
-  .termCopy h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin-bottom:16px}
-  .termCopy p{color:var(--dim);font-size:16px;max-width:440px;margin-bottom:22px}
-  .termCopy ul{list-style:none;display:grid;gap:10px}
-  .termCopy li{color:var(--dim);font-size:14.5px;display:flex;gap:12px;align-items:flex-start}
-  .termCopy li::before{content:"›";color:var(--amber);font-family:"JetBrains Mono";font-weight:700;
-    flex:none;width:16px;margin-top:-1px}
-  .terminal-preview{background:#0a0d14;border:1px solid var(--line);border-radius:12px;overflow:hidden;
-    box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(245,165,36,.05) inset}
-  .terminal-bar{background:#121822;padding:11px 14px;display:flex;align-items:center;gap:7px;
-    border-bottom:1px solid var(--line)}
-  .terminal-dot{width:12px;height:12px;border-radius:50%}
-  .terminal-dot.r{background:var(--red)}
-  .terminal-dot.y{background:var(--amber)}
-  .terminal-dot.g{background:var(--green)}
-  .terminal-title{margin-left:10px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--mut);letter-spacing:.08em}
-  .terminal-body{padding:22px 22px 24px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.85;color:var(--dim)}
-  .terminal-body .line{opacity:0;animation:lineIn .35s ease forwards;white-space:pre-wrap;word-break:break-word}
-  .terminal-body .line:nth-child(1){animation-delay:.15s}
-  .terminal-body .line:nth-child(2){animation-delay:.55s}
-  .terminal-body .line:nth-child(3){animation-delay:1.00s}
-  .terminal-body .line:nth-child(4){animation-delay:1.40s}
-  .terminal-body .line:nth-child(5){animation-delay:1.80s}
-  .terminal-body .line:nth-child(6){animation-delay:2.25s}
-  .terminal-body .line:nth-child(7){animation-delay:2.65s}
-  .terminal-body .line:nth-child(8){animation-delay:3.05s}
-  .terminal-body .line:nth-child(9){animation-delay:3.45s}
-  .terminal-body .line:nth-child(10){animation-delay:3.85s}
-  .terminal-body .line:nth-child(11){animation-delay:4.30s}
-  @keyframes lineIn{from{opacity:0;transform:translateX(-3px)}to{opacity:1;transform:none}}
-  .prompt{color:var(--amber);font-weight:600}
-  .cmd{color:var(--ink)}
-  .output{color:var(--dim)}
-  .success{color:var(--green)}
-  .fail{color:var(--red)}
-  .terminal-cursor{display:inline-block;width:8px;height:15px;background:var(--amber);
-    animation:blink 1s step-end infinite;vertical-align:middle;margin-left:2px}
-  @keyframes blink{50%{opacity:0}}
-  .terminal-body .promptPath{color:var(--blue)}
-
-  .tGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media(max-width:920px){.tGrid{grid-template-columns:1fr}}
-  .tCard{--acc:var(--amber);background:var(--panel);border:1px solid var(--line);border-radius:14px;
-    padding:28px;transition:transform .22s,border-color .22s,box-shadow .22s;display:flex;flex-direction:column;gap:16px}
-  .tCard:hover{transform:translateY(-5px);border-color:var(--acc);box-shadow:0 24px 50px rgba(0,0,0,.45)}
-  .avatar{position:relative;width:88px;height:88px;border-radius:14px;overflow:hidden;
-    border:2px solid var(--acc);background:var(--bg2);flex:none}
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-  .avatar .ini{position:absolute;inset:0;display:none;place-items:center;
-    font-family:Syne,sans-serif;font-weight:800;font-size:32px;color:var(--acc)}
-  .avatar.fb img{display:none}
-  .avatar.fb .ini{display:grid}
-  .tCard h3{font-family:Syne,sans-serif;font-weight:700;font-size:23px;line-height:1.1}
-  .tCard .handle{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--mut);margin-top:3px}
-  .role{display:inline-block;align-self:flex-start;font-family:"JetBrains Mono",monospace;font-size:10.5px;
-    letter-spacing:.2em;color:var(--acc);border:1px solid var(--acc);border-radius:99px;padding:5px 12px}
-  .tCard .bio{color:var(--dim);font-size:14.5px;flex:1}
-  .tLink{font-weight:600;font-size:13.5px;color:var(--dim);transition:color .2s}
-  .tLink:hover{color:var(--ink)}
-
-  .band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .bandIn{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:56px 0;flex-wrap:wrap}
-  .band h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.02em;max-width:580px}
-  .band h2 em{font-style:normal;color:var(--amber)}
-
-  footer{padding:44px 0 54px}
-  .footIn{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
-    color:var(--mut);font-size:13.5px}
-  .footIn .mono{font-size:11.5px;letter-spacing:.16em}
-  .footIn a:hover{color:var(--ink)}
-
-  .reveal{transition:opacity .65s ease,transform .65s ease}
-  .reveal.will{opacity:0;transform:translateY(22px)}
-  .reveal.in{opacity:1;transform:none}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3bitFun — independent game studio</title>
+  <meta name="description" content="3bitFun is a three-person indie game studio shipping on GitHub. Fast to learn, hard to put down.">
+  <meta property="og:title" content="3bitFun">
+  <meta property="og:description" content="Independent game studio. Games worth one more run.">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101216'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='900' fill='%23f5a524' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -261,7 +30,7 @@
 
 <header class="wrap hero" id="top">
   <div>
-    <div class="eyebrow reveal">INDEPENDENT GAME STUDIO — EST. 2025</div>
+    <div class="eyebrow reveal">INDEPENDENT GAME STUDIO — EST. 2026</div>
     <h1 class="reveal">Games worth<br><span class="a">one more run.</span></h1>
     <p class="lede reveal">3bitFun is a three-person studio shipping on GitHub.
       Fast to learn, hard to put down, and built with obsessive care.</p>
@@ -276,7 +45,7 @@
     <div class="row"><span class="k">TYPE</span><span class="v">Independent studio</span></div>
     <div class="row"><span class="k">TEAM</span><span class="v">3 builders</span></div>
     <div class="row"><span class="k">PLATFORM</span><span class="v">Web · GitHub Pages</span></div>
-    <div class="row"><span class="k">RELEASES</span><span class="v">05 and counting</span></div>
+    <div class="row"><span class="k">RELEASES</span><span class="v">04 and counting</span></div>
     <div class="row"><span class="k">STATUS</span><span class="v"><span class="liveDot"></span>Shipping now</span></div>
   </div>
 </header>
@@ -298,8 +67,8 @@
           <div class="at"><b>DDK</b> <span class="src">no idea</span></div>
         </div>
         <div class="rev">
-          <blockquote>no quote.</blockquote>
-          <div class="at"><b>tung tung</b> <span class="src">websling parkour</span></div>
+          <blockquote>buns.</blockquote>
+          <div class="at"><b>tung tung</b> <span class="src">sky stairs</span></div>
         </div>
         <div class="rev">
           <blockquote>at this point...</blockquote>
@@ -321,21 +90,6 @@
 
       <div class="gRow reveal" style="--acc:var(--amber)">
         <span class="num">000</span>
-        <a class="gMain" href="./hub/">
-          <h3>The Arcade</h3>
-          <p>A bunch of shit minigames.</p>
-        </a>
-        <div class="gMeta">
-          <span class="gTag">HUB</span>
-          <a class="gRepoBtn" href="https://github.com/3bitfun/fun" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View in GitHub
-          </a>
-        </div>
-        <span class="gArr">→</span>
-      </div>
-      <div class="gRow reveal" style="--acc:var(--amber)">
-        <span class="num">000</span>
         <a class="gMain" href="./websling-parkour/">
           <h3>Websling parkour</h3>
           <p>become spiderman.</p>
@@ -344,21 +98,21 @@
           <span class="gTag">ACTION</span>
           <a class="gRepoBtn" href="https://github.com/3bitfun/websling-parkour" target="_blank" rel="noopener">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View in GitHuba
+            View in GitHub
           </a>
         </div>
         <span class="gArr">→</span>
       </div>
 
       <div class="gRow reveal" style="--acc:var(--blue)">
-        <span class="num">002</span>
-        <a class="gMain" href="https://deano-139.github.io/sky_stairs/">
+        <span class="num">001</span>
+        <a class="gMain" href="https://deano-139.github.io/SKY_STAIRS/">
           <h3>Sky Stairs</h3>
           <p>Infinite pixel climber</p>
         </a>
         <div class="gMeta">
-          <span class="gTag">Speed</span>
-          <a class="gRepoBtn" href="https://github.com/deano-139/sky-stairs/" target="_blank" rel="noopener">
+          <span class="gTag">SPEED</span>
+          <a class="gRepoBtn" href="https://github.com/deano-139/SKY_STAIRS/" target="_blank" rel="noopener">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             View in GitHub
           </a>
@@ -367,7 +121,7 @@
       </div>
 
       <div class="gRow reveal" style="--acc:var(--red)">
-        <span class="num">001</span>
+        <span class="num">002</span>
         <a class="gMain" href="https://deano-139.github.io/stacks/">
           <h3>Stacks</h3>
           <p>Infinite loop of dropping blocks, stacking them, and dropping them again.</p>
@@ -383,7 +137,7 @@
       </div>
 
       <div class="gRow reveal" style="--acc:var(--blue)">
-        <span class="num">002</span>
+        <span class="num">003</span>
         <a class="gMain" href="https://3bitfun.github.io/doodl/">
           <h3>doodl</h3>
           <p>A fun online multiplayer game of doodling and guessing what you're drawing.</p>
@@ -399,7 +153,7 @@
       </div>
 
       <div class="gRow reveal" style="--acc:var(--green)">
-        <span class="num">003</span>
+        <span class="num">004</span>
         <a class="gMain" href="https://tasqlab.itch.io/robokombat/">
           <h3>Robokombat</h3>
           <p>Two player robot combat. You control the robot, the enemy controls the robot.</p>
@@ -422,7 +176,7 @@
   <div class="wrap">
     <div class="stats reveal">
       <div class="stat"><b>03</b><span>BUILDERS</span></div>
-      <div class="stat"><b>05</b><span>GAMES LIVE</span></div>
+      <div class="stat"><b>04</b><span>GAMES LIVE</span></div>
       <div class="stat"><b>'26</b><span>ESTABLISHED</span></div>
       <div class="stat"><b>∞</b><span>ONE-MORE-RUNS</span></div>
     </div>
@@ -436,7 +190,7 @@
       <h2>Clone, run, have fun.</h2>
       <p>Every 3bitFun release lives in the open. No accounts, no installs, no waiting — just open a file and play. Here's what that looks like in a terminal.</p>
       <ul>
-        <li>Zero install — every game is a single HTML file.</li>
+        <li>Zero install — every game is web hosted.</li>
         <li>Zero accounts — no logins, no telemetry, no nonsense.</li>
         <li>Zero waiting — everything ships on GitHub Pages, globally cached.</li>
       </ul>
@@ -507,37 +261,11 @@
 
 <footer>
   <div class="wrap footIn">
-    <div>© <span id="year">2025</span> 3bitFun — made by three people who take play seriously.</div>
+    <div>© <span id="year">2026</span> 3bitFun — made by three people who take play seriously.</div>
     <a class="mono" href="https://github.com/3bitFun" target="_blank" rel="noopener">GITHUB.COM/3BITFUN ↗</a>
   </div>
 </footer>
 
-<script>
-"use strict";
-const $=s=>document.querySelector(s);
-const revs=[...document.querySelectorAll('#revDeck .rev')];
-const dotsWrap=$('#revDots');
-let revIdx=0,revTimer=null;
-revs.forEach((_,i)=>{const b=document.createElement('button');b.className='revDot';b.setAttribute('aria-label','Review '+(i+1));
-  b.onclick=()=>{go(i);reset();};dotsWrap.appendChild(b);});
-function go(i){revIdx=(i+revs.length)%revs.length;
-  revs.forEach((r,k)=>r.classList.toggle('on',k===revIdx));
-  dotsWrap.querySelectorAll('.revDot').forEach((d,k)=>d.classList.toggle('on',k===revIdx));}
-function reset(){clearInterval(revTimer);revTimer=setInterval(()=>go(revIdx+1),5200);}
-go(0);reset();
-const rw=document.querySelector('.revWrap');
-if(rw){rw.addEventListener('mouseenter',()=>clearInterval(revTimer));rw.addEventListener('mouseleave',reset);}
-function forceRevealAll(){document.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('will');el.classList.add('in');});}
-try{if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.remove('will');e.target.classList.add('in');io.unobserve(e.target);}
-}),{threshold:.12});document.querySelectorAll('.reveal').forEach((el,i)=>{
-  el.style.transitionDelay=(i%4)*70+'ms';el.classList.add('will');io.observe(el);});}}catch(e){forceRevealAll();}
-window.addEventListener('error',forceRevealAll);
-if('IntersectionObserver' in window){const tb=document.querySelector('.terminal-body');
-  if(tb){const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
-    tb.querySelectorAll('.line').forEach(l=>{l.style.animation='none';void l.offsetWidth;l.style.animation='';});
-    io2.unobserve(tb);}}),{threshold:.35});io2.observe(tb);}}
-const yr=$('#year');if(yr)yr.textContent=new Date().getFullYear();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
