@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Hub Page -->
+  <url>
+    <loc>https://3bitfun.github.io/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Websling Parkour -->
+  <url>
+    <loc>https://3bitfun.github.io/websling-parkour/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- doodl -->
+  <url>
+    <loc>https://3bitfun.github.io/doodl/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sky Stairs (hosted on deano-139's GitHub Pages) -->
+  <url>
+    <loc>https://deano-139.github.io/SKY_STAIRS/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Stacks (hosted on deano-139's GitHub Pages) -->
+  <url>
+    <loc>https://deano-139.github.io/stacks/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
