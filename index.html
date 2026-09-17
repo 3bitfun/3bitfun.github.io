@@ -8,6 +8,7 @@
   <meta name="description" content="3bitFun is a three-person indie game studio shipping on GitHub. Fast to learn, hard to put down.">
   <meta property="og:title" content="3bitFun">
   <meta property="og:description" content="Independent game studio. Games worth one more run.">
+  <meta property="og:image" content="https://3bitfun.github.io/thumbnails/og.png">
   <meta name="theme-color" content="#0f1115">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101216'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='900' fill='%23f5a524' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +31,9 @@
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════ -->
 <header class="wrap hero" id="top">
   <div>
     <div class="eyebrow reveal">INDEPENDENT GAME STUDIO — EST. 2026</div>
@@ -52,29 +56,29 @@
   </div>
 </header>
 
-<section class="reviews reveal" style="padding-top:20px">
+<!-- ═══════════════════════════════════════════════════════════════
+     FEATURED — one big showcase card
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="featured reveal">
   <div class="wrap">
-    <div class="revWrap">
-      <div class="revHead">
-        <div class="revLabel">WHAT_PLAYERS_SAY</div>
-        <div class="revStage" id="revDots"></div>
+    <div class="featuredCard">
+      <div class="featuredMedia" style="--acc:var(--amber)">
+        <img src="./thumbnails/doodl.png" alt="doodl gameplay" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="thumbFallback" style="display:none;">DOODL</div>
+        <span class="featuredBadge">✦ FEATURED</span>
       </div>
-      <div class="revDeck" id="revDeck">
-        <div class="rev">
-          <blockquote>its good.</blockquote>
-          <div class="at"><b>Creamy Buns</b> <span class="src">someone</span></div>
+      <div class="featuredBody">
+        <div class="featuredTag">MULTIPLAYER · PUZZLE</div>
+        <h2>doodl</h2>
+        <p>Real-time multiplayer drawing and guessing. Create a room, share the code, and try to draw your way to victory — with live cursors, a fill tool, and a global room list.</p>
+        <div class="featuredMeta">
+          <span><b>PLAYERS</b> 2–8</span>
+          <span><b>ROUNDS</b> 3</span>
+          <span><b>RUNTIME</b> ~5 min</span>
         </div>
-        <div class="rev">
-          <blockquote>At the end of the day, the day's gonna end.</blockquote>
-          <div class="at"><b>DDK</b> <span class="src">no idea</span></div>
-        </div>
-        <div class="rev">
-          <blockquote>buns.</blockquote>
-          <div class="at"><b>tung tung</b> <span class="src">sky stairs</span></div>
-        </div>
-        <div class="rev">
-          <blockquote>at this point...</blockquote>
-          <div class="at"><b>somenoe</b> <span class="src">none</span></div>
+        <div class="featuredActions">
+          <a class="btn gold" href="./doodl/">Play doodl <span class="arr">→</span></a>
+          <a class="btn ghost" href="https://github.com/3bitfun/doodl" target="_blank" rel="noopener">View on GitHub ↗</a>
         </div>
       </div>
     </div>
@@ -94,91 +98,115 @@
 
     <div class="cardGrid">
 
+      <!-- Websling -->
       <article class="card reveal" style="--acc:var(--amber)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/websling.png" alt="Websling parkour" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">WEBSLING</div>
           <span class="cardTag">ACTION</span>
-          <span class="cardNum">000</span>
         </div>
-        <h3>Websling parkour</h3>
-        <p>actual 3d web slinger game. become spiderman.</p>
+        <div class="cardBody">
+          <h3>Websling parkour</h3>
+          <p>actual 3d web slinger game. become spiderman.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="./websling-parkour/">Play now <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/websling-parkour" target="_blank" rel="noopener" aria-label="View Websling parkour on GitHub">
+          <a class="cardRepo" href="https://github.com/3bitfun/websling-parkour" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- Sky Stairs -->
       <article class="card reveal" style="--acc:var(--blue)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/sky-stairs.png" alt="Sky Stairs" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">SKY STAIRS</div>
           <span class="cardTag">SPEED</span>
-          <span class="cardNum">001</span>
         </div>
-        <h3>Sky Stairs</h3>
-        <p>Infinite pixel climber. How high can you get before you slip?</p>
+        <div class="cardBody">
+          <h3>Sky Stairs</h3>
+          <p>Infinite pixel climber. How high can you get before you slip?</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="https://deano-139.github.io/SKY_STAIRS/">Play now <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/deano-139/SKY_STAIRS/" target="_blank" rel="noopener" aria-label="View Sky Stairs on GitHub">
+          <a class="cardRepo" href="https://github.com/deano-139/SKY_STAIRS/" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- Stacks -->
       <article class="card reveal" style="--acc:var(--red)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/stacks.png" alt="Stacks" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">STACKS</div>
           <span class="cardTag">TIMING</span>
-          <span class="cardNum">002</span>
         </div>
-        <h3>Stacks</h3>
-        <p>Infinite loop of dropping blocks, stacking them, and dropping them again.</p>
+        <div class="cardBody">
+          <h3>Stacks</h3>
+          <p>Infinite loop of dropping blocks, stacking them, and dropping them again.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="https://deano-139.github.io/stacks/">Play now <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/deano-139" target="_blank" rel="noopener" aria-label="View Stacks on GitHub">
+          <a class="cardRepo" href="https://github.com/deano-139" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- doodl -->
       <article class="card reveal" style="--acc:var(--blue)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/doodl.png" alt="doodl" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">DOODL</div>
           <span class="cardTag">PUZZLE</span>
-          <span class="cardNum">003</span>
         </div>
-        <h3>doodl</h3>
-        <p>A fun online multiplayer game of doodling and guessing what you're drawing.</p>
+        <div class="cardBody">
+          <h3>doodl</h3>
+          <p>A fun online multiplayer game of doodling and guessing what you're drawing.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="https://3bitfun.github.io/doodl/">Play now <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/doodl" target="_blank" rel="noopener" aria-label="View doodl on GitHub">
+          <a class="cardRepo" href="https://github.com/3bitfun/doodl" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- Robokombat -->
       <article class="card reveal" style="--acc:var(--green)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/robokombat.png" alt="Robokombat" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">ROBOKOMBAT</div>
           <span class="cardTag">SKILL</span>
-          <span class="cardNum">004</span>
         </div>
-        <h3>Robokombat</h3>
-        <p>Two player robot combat. You control the robot, the enemy controls the robot.</p>
+        <div class="cardBody">
+          <h3>Robokombat</h3>
+          <p>Two player robot combat. You control the robot, the enemy controls the robot.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="https://tasqlab.itch.io/robokombat/">Play now <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/tasqlab/robokombat" target="_blank" rel="noopener" aria-label="View Robokombat on GitHub">
+          <a class="cardRepo" href="https://github.com/tasqlab/robokombat" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- RAM incremental -->
       <article class="card reveal" style="--acc:var(--amber)">
-        <div class="cardTop">
-          <span class="cardTag">FPS</span>
-          <span class="cardNum">005</span>
+        <div class="cardMedia">
+          <img src="./thumbnails/ram.png" alt="RAM" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">RAM</div>
+          <span class="cardTag">IDLE</span>
         </div>
-        <h3>Kinetic</h3>
-        <p>3d Godot fast paced FPS. Builds incoming — watch the repo.</p>
+        <div class="cardBody">
+          <h3>RAM</h3>
+          <p>Download RAM incremental. Click. Buy. Idle. Reboot. Repeat.</p>
+        </div>
         <div class="cardFoot">
-          <a class="cardPlay" href="https://github.com/3bitfun/kinetic" target="_blank" rel="noopener">View repo <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/kinetic" target="_blank" rel="noopener" aria-label="View Kinetic on GitHub">
+          <a class="cardPlay" href="./ram/">Play now <span class="arr">→</span></a>
+          <a class="cardRepo" href="https://github.com/3bitfun/ram" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
@@ -201,91 +229,77 @@
 
     <div class="cardGrid">
 
+      <!-- Generators -->
       <article class="card reveal" style="--acc:var(--amber)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/generators.png" alt="Generators" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">GENERATORS</div>
           <span class="cardTag">JOKE</span>
-          <span class="cardNum">P00</span>
         </div>
-        <h3>Generators</h3>
-        <p>Totally real generators. Download more RAM, GPU, WiFi, brain cells, and more.</p>
+        <div class="cardBody">
+          <h3>Generators</h3>
+          <p>Totally real generators. Download more RAM, GPU, WiFi, brain cells, and more.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="./generators/">Launch hub <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/generators" target="_blank" rel="noopener" aria-label="View Generators on GitHub">
+          <a class="cardRepo" href="https://github.com/3bitfun/generators" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
-      <article class="card reveal" style="--acc:var(--amber)">
-        <div class="cardTop">
-          <span class="cardTag">IDLE</span>
-          <span class="cardNum">P01</span>
-        </div>
-        <h3>RAM</h3>
-        <p>Download RAM incremental. Click. Buy. Idle. Preboot. Repeat.</p>
-        <div class="cardFoot">
-          <a class="cardPlay" href="./ram/">Play now <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/ram" target="_blank" rel="noopener" aria-label="View RAM on GitHub">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="card reveal" style="--acc:var(--blue)">
-        <div class="cardTop">
-          <span class="cardTag">3D</span>
-          <span class="cardNum">P02</span>
-        </div>
-        <h3>Kinetic</h3>
-        <p>3d Godot fast paced FPS. Built in GDScript, shipping when it's ready.</p>
-        <div class="cardFoot">
-          <a class="cardPlay" href="https://github.com/3bitfun/kinetic" target="_blank" rel="noopener">View repo <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/kinetic" target="_blank" rel="noopener" aria-label="View Kinetic on GitHub">
-            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </a>
-        </div>
-      </article>
-
+      <!-- airMouse -->
       <article class="card reveal" style="--acc:var(--green)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/airmouse.png" alt="airMouse" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">AIRMOUSE</div>
           <span class="cardTag">EXPERIMENT</span>
-          <span class="cardNum">P03</span>
         </div>
-        <h3>airMouse</h3>
-        <p>Futuristic finger tracking to control your mouse. Wave at your computer.</p>
+        <div class="cardBody">
+          <h3>airMouse</h3>
+          <p>Futuristic finger tracking to control your mouse. Wave at your computer.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="https://github.com/3bitfun/airMouse" target="_blank" rel="noopener">View repo <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/airMouse" target="_blank" rel="noopener" aria-label="View airMouse on GitHub">
+          <a class="cardRepo" href="https://github.com/3bitfun/airMouse" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- airShare -->
       <article class="card reveal" style="--acc:var(--blue)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/airshare.png" alt="airShare" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">AIRSHARE</div>
           <span class="cardTag">TOOL</span>
-          <span class="cardNum">P04</span>
         </div>
-        <h3>airShare</h3>
-        <p>Simple yet effective file sharing p2p site. No accounts, no upload, no nonsense.</p>
+        <div class="cardBody">
+          <h3>airShare</h3>
+          <p>Simple yet effective file sharing p2p site. No accounts, no upload, no nonsense.</p>
+        </div>
         <div class="cardFoot">
-          <a class="cardPlay" href="https://github.com/3bitfun/airShare" target="_blank" rel="noopener">View repo <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/airShare" target="_blank" rel="noopener" aria-label="View airShare on GitHub">
+          <a class="cardPlay" href="./airshare/">Launch app <span class="arr">→</span></a>
+          <a class="cardRepo" href="https://github.com/3bitfun/airShare" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </article>
 
+      <!-- tiles -->
       <article class="card reveal" style="--acc:var(--red)">
-        <div class="cardTop">
+        <div class="cardMedia">
+          <img src="./thumbnails/tiles.png" alt="tiles" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="thumbFallback" style="display:none;">TILES</div>
           <span class="cardTag">SOCIAL</span>
-          <span class="cardNum">P05</span>
         </div>
-        <h3>tiles</h3>
-        <p>Create SOMETHING with other people. A collaborative canvas experiment.</p>
+        <div class="cardBody">
+          <h3>tiles</h3>
+          <p>Create SOMETHING with other people. A collaborative canvas experiment.</p>
+        </div>
         <div class="cardFoot">
           <a class="cardPlay" href="https://github.com/3bitfun/tiles" target="_blank" rel="noopener">View repo <span class="arr">→</span></a>
-          <a class="cardRepo" href="https://github.com/3bitfun/tiles" target="_blank" rel="noopener" aria-label="View tiles on GitHub">
+          <a class="cardRepo" href="https://github.com/3bitfun/tiles" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
@@ -295,27 +309,33 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     STATS
+     ═══════════════════════════════════════════════════════════════ -->
 <section id="ethos" style="padding-top:0">
   <div class="wrap">
     <div class="stats reveal">
       <div class="stat"><b>03</b><span>BUILDERS</span></div>
-      <div class="stat"><b>09</b><span>REPOS LIVE</span></div>
+      <div class="stat"><b>10</b><span>REPOS LIVE</span></div>
       <div class="stat"><b>'26</b><span>ESTABLISHED</span></div>
       <div class="stat"><b>∞</b><span>ONE-MORE-RUNS</span></div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     TERMINAL
+     ═══════════════════════════════════════════════════════════════ -->
 <section class="term reveal" style="padding-top:40px">
   <div class="wrap termIn">
     <div class="termCopy">
       <div class="no mono" style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.28em;color:var(--amber);margin-bottom:12px">03 / UNDER THE HOOD</div>
       <h2>Clone, run, have fun.</h2>
-      <p>Every 3bitFun release lives in the open. No accounts, no installs, no waiting — just open a file and play. Here's what that looks like in a terminal.</p>
+      <p>Every 3bitFun release lives in the open. No accounts, no installs, no waiting — just open a file and play.</p>
       <ul>
         <li>Zero install — every game is web hosted.</li>
         <li>Zero accounts — no logins, no telemetry, no nonsense.</li>
-        <li>Zero waiting — everything ships on GitHub Pages, globally cached.</li>
+        <li>Zero waiting — everything ships on GitHub Pages and Cloudflare Workers.</li>
       </ul>
     </div>
     <div class="terminal-preview">
@@ -329,19 +349,22 @@
         <div class="line"><span class="prompt">tasq@3bitfun</span>:<span class="promptPath">~/arcade</span>$ git clone https://github.com/3bitFun/fun.git</div>
         <div class="line output">Cloning into 'fun'... resolving deltas: 100% done.</div>
         <div class="line"><span class="prompt">tasq@3bitfun</span>:<span class="promptPath">~/arcade</span>$ cd fun && ls</div>
-        <div class="line output">stacks/  doodl/  robokombat/  index.html</div>
-        <div class="line"><span class="prompt">tasq@3bitfun</span>:<span class="promptPath">~/arcade</span>$ ./play.sh stacks/</div>
-        <div class="line success">[STACKS] Physics engine initialized... ✓</div>
-        <div class="line success">[STACKS] Block cadence calibrated. ✓</div>
-        <div class="line success">[STACKS] OVERHANGS: RESPECT THEM. ✓</div>
+        <div class="line output">doodl/  stacks/  robokombat/  index.html</div>
+        <div class="line"><span class="prompt">tasq@3bitfun</span>:<span class="promptPath">~/arcade</span>$ ./play.sh doodl/</div>
+        <div class="line success">[DOODL] WebSocket room server online... ✓</div>
+        <div class="line success">[DOODL] Drawing canvas attached. ✓</div>
+        <div class="line success">[DOODL] Fill tool ready. Remote cursors enabled. ✓</div>
         <div class="line"><span class="prompt">tasq@3bitfun</span>:<span class="promptPath">~/arcade</span>$ make fun</div>
-        <div class="line success">[3bitfun] 09 repos shipped · 03 builders · ∞ fun ✓</div>
+        <div class="line success">[3bitfun] 10 repos shipped · 03 builders · ∞ fun ✓</div>
         <div class="line"><span class="prompt">tasq@3bitfun</span>:<span class="promptPath">~/arcade</span>$ <span class="terminal-cursor"></span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     TEAM
+     ═══════════════════════════════════════════════════════════════ -->
 <section id="crew" style="padding-top:20px">
   <div class="wrap">
     <div class="secHead reveal">

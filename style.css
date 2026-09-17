@@ -1260,3 +1260,279 @@ footer {
 }
 
 .cardRepo:hover svg { fill: #081811; }
+
+/* ═══════════════════════════════════════════════════════════════
+   FEATURED CARD — big hero showcase
+   ═══════════════════════════════════════════════════════════════ */
+
+.featured { padding: 40px 0 20px; }
+
+.featuredCard {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+  transition: border-color 0.25s;
+  min-height: 420px;
+}
+
+.featuredCard:hover { border-color: var(--amber); }
+
+.featuredMedia {
+  position: relative;
+  background: linear-gradient(135deg, #1a1f2e, #0d1016);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.featuredMedia img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featuredMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 60%, rgba(22, 26, 34, 0.85) 100%);
+  pointer-events: none;
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--amber);
+  background: rgba(15, 17, 21, 0.85);
+  border: 1px solid var(--amber);
+  border-radius: 99px;
+  padding: 6px 14px;
+  backdrop-filter: blur(6px);
+}
+
+.featuredBody {
+  padding: 42px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.featuredTag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: var(--amber);
+}
+
+.featuredBody h2 {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.featuredBody p {
+  color: var(--dim);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 460px;
+}
+
+.featuredMeta {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.featuredMeta b {
+  display: block;
+  color: var(--mut);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+.featuredActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.featuredActions .btn.gold { padding: 14px 24px; font-size: 15px; }
+
+@media (max-width: 900px) {
+  .featuredCard { grid-template-columns: 1fr; min-height: auto; }
+  .featuredMedia { min-height: 220px; }
+  .featuredMedia::after { background: linear-gradient(180deg, transparent 60%, rgba(22, 26, 34, 0.85) 100%); }
+  .featuredBody { padding: 28px 24px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CARD GRID — updated with thumbnails
+   ═══════════════════════════════════════════════════════════════ */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 960px) { .cardGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .cardGrid { grid-template-columns: 1fr; } }
+
+.card {
+  --acc: var(--amber);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--acc);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--acc);
+}
+
+/* Thumbnail area */
+.cardMedia {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--acc) 15%, #14161c), #0d1016);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardMedia img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .cardMedia img { transform: scale(1.04); }
+
+.cardMedia .thumbFallback {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  color: var(--acc);
+  text-align: center;
+  padding: 20px;
+  text-shadow: 0 0 30px color-mix(in srgb, var(--acc) 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cardTag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--acc);
+  background: rgba(15, 17, 21, 0.85);
+  border: 1px solid var(--acc);
+  border-radius: 99px;
+  padding: 4px 11px;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.cardBody {
+  padding: 20px 22px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardBody h3 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+
+.card:hover .cardBody h3 { color: var(--acc); }
+
+.cardBody p {
+  color: var(--dim);
+  font-size: 14.5px;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 22px 18px;
+  border-top: 1px dashed var(--line);
+}
+
+.cardPlay {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  transition: color 0.2s, gap 0.2s;
+}
+
+.cardPlay .arr { transition: transform 0.22s; display: inline-block; }
+.card:hover .cardPlay { color: var(--acc); }
+.card:hover .cardPlay .arr { transform: translateX(5px); }
+
+.cardRepo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  transition: background 0.2s, border-color 0.2s, transform 0.18s;
+  flex-shrink: 0;
+}
+
+.cardRepo svg { width: 15px; height: 15px; fill: var(--dim); transition: fill 0.2s; }
+.cardRepo:hover { background: var(--green); border-color: var(--green); transform: translateY(-1px); }
+.cardRepo:hover svg { fill: #081811; }
